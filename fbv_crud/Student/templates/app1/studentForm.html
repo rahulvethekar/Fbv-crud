@@ -1,0 +1,17 @@
+{% extends 'app1/base.html' %}
+{% load crispy_forms_tags %}
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+{% block contain %}
+    <h1>Student Registrations</h1>
+
+    <form method='post'>
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit">
+
+
+    </form>
+
+{% endblock %}

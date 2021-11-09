@@ -1,0 +1,35 @@
+{% extends 'app1/base.html' %}
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+
+{% block contain %}
+    <h1>Student Details</h1>
+    <table>
+        <tr>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Student Marks</th>
+            <th>Student City</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for data in studentData %}
+            <tr>
+                <td>{{data.rn}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.marks}}</td>
+                <td>{{data.city}}</td>
+                <td><a href="{% url 'studentUpdate' data.id %}">Update</a></td>
+                <td><a href="{% url 'studentDelete' data.id %}">Delete</a></td>
+
+
+
+
+            </tr>
+            {% endfor %}
+
+
+    </table>
+{% endblock %}
